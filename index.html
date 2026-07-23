@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Saya</title>
-    <link rel="icon" type="image/png" href="favicon.png"> 
+    <title>Portofolio Deki Sukarnain</title>
     <link rel="stylesheet" href="style.css">
-  <!-- Font Google: Poppins -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="Favicon.png">   <!-- BARU -->
+    <!-- Font Google: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
     <!-- NAVIGASI -->
@@ -83,49 +83,49 @@
         <p>© 2026 - Dibuat dengan ❤️ dari HP</p>
     </footer>
 
-    <!-- ==================== JAVASCRIPT UNTUK TEMA ==================== -->
+    <!-- TOMBOL SCROLL TO TOP -->
+    <button id="scrollTopBtn">↑</button>
+
+    <!-- ==================== JAVASCRIPT ==================== -->
     <script>
-// ========== SCROLL TO TOP ==========
-const scrollBtn = document.getElementById('scrollTopBtn');
-
-// Tampilkan tombol saat scroll ke bawah lebih dari 300px
-window.onscroll = function() {
-    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        scrollBtn.style.display = 'block';
-    } else {
-        scrollBtn.style.display = 'none';
-    }
-};
-
-// Saat tombol diklik, kembali ke atas dengan halus
-scrollBtn.onclick = function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-};
-        // Ambil tombol tema dari HTML
+        // ========== TEMA TERANG/GELAP ==========
         const toggleBtn = document.getElementById('theme-toggle');
 
-function toggleTheme() {
-    document.body.classList.toggle('light-mode');
-    if (document.body.classList.contains('light-mode')) {
-        toggleBtn.textContent = '☀️';
-        localStorage.setItem('theme', 'light');
-    } else {
-        toggleBtn.textContent = '🌙';
-        localStorage.setItem('theme', 'dark');
-    }
-}
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+            if (document.body.classList.contains('light-mode')) {
+                toggleBtn.textContent = '☀️';
+                localStorage.setItem('theme', 'light');
+            } else {
+                toggleBtn.textContent = '🌙';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
 
-toggleBtn.onclick = toggleTheme;
+        toggleBtn.onclick = toggleTheme;
 
-window.onload = function() {
-    if (localStorage.getItem('theme') === 'light') {
-        document.body.classList.add('light-mode');
-        toggleBtn.textContent = '☀️';
-    }
-};
+        window.onload = function() {
+            if (localStorage.getItem('theme') === 'light') {
+                document.body.classList.add('light-mode');
+                toggleBtn.textContent = '☀️';
+            }
+        };
+
+        // ========== SCROLL TO TOP ==========
+        const scrollBtn = document.getElementById('scrollTopBtn');
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollBtn.style.display = 'block';
+            } else {
+                scrollBtn.style.display = 'none';
+            }
+        };
+
+        scrollBtn.onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
     </script>
     <!-- ==================== AKHIR JAVASCRIPT ==================== -->
-  <!-- Tombol Scroll to Top -->
-<button id="scrollTopBtn" style="display: none; position: fixed; bottom: 30px; right: 30px; background: #00ff88; color: #0a0e27; border: none; border-radius: 50%; width: 50px; height: 50px; font-size: 24px; cursor: pointer; box-shadow: 0 4px 15px rgba(0, 255, 136, 0.4);">↑</button>
 </body>
 </html>
