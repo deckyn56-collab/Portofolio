@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 /* SCROLL HALUS */
@@ -32,7 +33,7 @@ nav {
 }
 
 nav h2 {
-    color: #00ff88;
+    color: #58a6ff;
 }
 
 nav ul {
@@ -48,12 +49,12 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #00ff88;
+    color: #58a6ff;
 }
 
 /* TOMBOL TEMA (DEFAULT GELAP) */
 #theme-toggle {
-    color: #00ff88;
+    color: #58a6ff;
 }
 
 /* SECTION */
@@ -85,13 +86,13 @@ h1, h2 {
 }
 
 h1 span {
-    color: #00ff88;
+    color: #58a6ff;
 }
 
 /* TOMBOL UMUM */
 .btn {
     display: inline-block;
-    background: #00ff88;
+    background: #58a6ff;
     color: #0a0e27;
     padding: 10px 20px;
     text-decoration: none;
@@ -103,7 +104,7 @@ h1 span {
 }
 
 .btn:hover {
-    background: #66ffaa;
+    background: #79c0ff;
 }
 
 /* PROJECT CARD */
@@ -118,7 +119,7 @@ h1 span {
 
 .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 255, 136, 0.3);
+    box-shadow: 0 8px 25px rgba(88, 166, 255, 0.3);
 }
 
 .project-card h3 {
@@ -163,6 +164,33 @@ footer {
 }
 
 /* ============================================
+   TOMBOL SCROLL TO TOP
+   ============================================ */
+
+#scrollTopBtn {
+    background: #58a6ff;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(88, 166, 255, 0.4);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0.7;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: none;
+}
+
+#scrollTopBtn:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* ============================================
    TEMA TERANG (LIGHT MODE) - LENGKAP
    ============================================ */
 
@@ -185,7 +213,7 @@ body.light-mode nav ul li a {
 }
 
 body.light-mode nav ul li a:hover {
-    color: #00ff88 !important;
+    color: #58a6ff !important;
 }
 
 body.light-mode #theme-toggle {
@@ -199,7 +227,7 @@ body.light-mode h3 {
 }
 
 body.light-mode h1 span {
-    color: #00ff88 !important;
+    color: #58a6ff !important;
 }
 
 body.light-mode p,
@@ -235,12 +263,12 @@ body.light-mode #contact-form textarea::placeholder {
 }
 
 body.light-mode #contact-form button {
-    background: #00ff88 !important;
-    color: #0f172a !important;
+    background: #58a6ff !important;
+    color: #ffffff !important;
 }
 
 body.light-mode #contact-form button:hover {
-    background: #66ffaa !important;
+    background: #79c0ff !important;
 }
 
 body.light-mode footer {
@@ -248,15 +276,19 @@ body.light-mode footer {
     border-top-color: #cbd5e1 !important;
 }
 
+body.light-mode #scrollTopBtn {
+    background: #58a6ff !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 15px rgba(88, 166, 255, 0.3);
+}
+
 /* ============================================
    RESPONSIF HP
    ============================================ */
 
 @media (max-width: 768px) {
-    /* Navigasi TETAP HORIZONTAL (tidak ada flex-direction: column) */
-    
     section {
-        padding-top: 100px !important;   /* Jarak aman untuk HP */
+        padding-top: 100px !important;
     }
 
     h1 {
@@ -276,10 +308,19 @@ body.light-mode footer {
         text-align: center;
         padding: 14px 20px;
     }
+
+    #scrollTopBtn {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+        bottom: 20px;
+        right: 20px;
+    }
 }
+
 @media (max-width: 480px) {
     section {
-        padding: 150px 15px 30px !important;
+        padding: 140px 15px 30px !important;
     }
 
     h1 {
@@ -288,5 +329,17 @@ body.light-mode footer {
 
     body {
         font-size: 14px;
+    }
+
+    nav ul li a {
+        font-size: 12px;
+    }
+
+    #scrollTopBtn {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+        bottom: 15px;
+        right: 15px;
     }
 }
