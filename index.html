@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio Saya</title>
+    <link rel="icon" type="image/png" href="favicon.png"> 
     <link rel="stylesheet" href="style.css">
+  <!-- Font Google: Poppins -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="Favicon.png">   <!-- BARU -->
 </head>
 <body>
     <!-- NAVIGASI -->
@@ -17,7 +21,7 @@
             <li><a href="#contact">Kontak</a></li>
         </ul>
         <!-- TOMBOL TEMA -->
-        <button id="theme-toggle" style="background: none; border: none; font-size: 24px; cursor: pointer; color: #00ff88;">🌙</button>
+        <button id="theme-toggle" style="background: none; border: none; font-size: 24px; cursor: pointer; color: #58a6ff;">🌙</button>
     </nav>
 
     <!-- HOME -->
@@ -81,35 +85,47 @@
 
     <!-- ==================== JAVASCRIPT UNTUK TEMA ==================== -->
     <script>
+// ========== SCROLL TO TOP ==========
+const scrollBtn = document.getElementById('scrollTopBtn');
+
+// Tampilkan tombol saat scroll ke bawah lebih dari 300px
+window.onscroll = function() {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        scrollBtn.style.display = 'block';
+    } else {
+        scrollBtn.style.display = 'none';
+    }
+};
+
+// Saat tombol diklik, kembali ke atas dengan halus
+scrollBtn.onclick = function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+};
         // Ambil tombol tema dari HTML
         const toggleBtn = document.getElementById('theme-toggle');
 
-        // Fungsi untuk mengganti tema
-        function toggleTheme() {
-            // Tambah atau hapus class 'light-mode' di <body>
-            document.body.classList.toggle('light-mode');
+function toggleTheme() {
+    document.body.classList.toggle('light-mode');
+    if (document.body.classList.contains('light-mode')) {
+        toggleBtn.textContent = '☀️';
+        localStorage.setItem('theme', 'light');
+    } else {
+        toggleBtn.textContent = '🌙';
+        localStorage.setItem('theme', 'dark');
+    }
+}
 
-            // Ganti ikon tombol
-            if (document.body.classList.contains('light-mode')) {
-                toggleBtn.textContent = '☀️';  // Tema terang -> ikon matahari
-                localStorage.setItem('theme', 'light'); // Simpan pilihan
-            } else {
-                toggleBtn.textContent = '🌙';  // Tema gelap -> ikon bulan
-                localStorage.setItem('theme', 'dark'); // Simpan pilihan
-            }
-        }
+toggleBtn.onclick = toggleTheme;
 
-        // Saat tombol diklik, jalankan fungsi di atas
-        toggleBtn.onclick = toggleTheme;
-
-        // Saat halaman dimuat, cek tema yang tersimpan di HP
-        window.onload = function() {
-            if (localStorage.getItem('theme') === 'light') {
-                document.body.classList.add('light-mode');
-                toggleBtn.textContent = '☀️';
-            }
-        };
+window.onload = function() {
+    if (localStorage.getItem('theme') === 'light') {
+        document.body.classList.add('light-mode');
+        toggleBtn.textContent = '☀️';
+    }
+};
     </script>
     <!-- ==================== AKHIR JAVASCRIPT ==================== -->
+  <!-- Tombol Scroll to Top -->
+<button id="scrollTopBtn" style="display: none; position: fixed; bottom: 30px; right: 30px; background: #00ff88; color: #0a0e27; border: none; border-radius: 50%; width: 50px; height: 50px; font-size: 24px; cursor: pointer; box-shadow: 0 4px 15px rgba(0, 255, 136, 0.4);">↑</button>
 </body>
 </html>
