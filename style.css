@@ -4,14 +4,17 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 /* SCROLL HALUS */
 html {
     scroll-behavior: smooth;
 }
+
+/* BODY DEFAULT (TEMA GELAP) */
 body {
-    font-family: poppins, sans-serif;
+    font-family: 'Poppins', Arial, sans-serif;
     background: #0a0e27;
-    color: #0a0e27;
+    color: #c9d1d9;
     line-height: 1.6;
 }
 
@@ -48,6 +51,11 @@ nav ul li a:hover {
     color: #00ff88;
 }
 
+/* TOMBOL TEMA (DEFAULT GELAP) */
+#theme-toggle {
+    color: #00ff88;
+}
+
 /* SECTION */
 section {
     padding: 120px 20px 40px;
@@ -55,7 +63,7 @@ section {
     margin: 0 auto;
 }
 
-/* ANIMASI FADE IN SAAT HALAMAN DIBUKA */
+/* ANIMASI FADE IN */
 #home h1 {
     animation: fadeInUp 1s ease;
 }
@@ -70,6 +78,8 @@ section {
         transform: translateY(0);
     }
 }
+
+/* JUDUL */
 h1, h2 {
     color: #f0f6fc;
 }
@@ -78,21 +88,44 @@ h1 span {
     color: #00ff88;
 }
 
+/* TOMBOL UMUM */
 .btn {
     display: inline-block;
     background: #00ff88;
-    color: #c9d1d9;
+    color: #0a0e27;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 6px;
     margin-top: 10px;
     font-weight: bold;
+    border: none;
+    cursor: pointer;
 }
 
-/* ====================================
-   STYLE FORM KONTAK
-   ==================================== */
+.btn:hover {
+    background: #66ffaa;
+}
 
+/* PROJECT CARD */
+.project-card {
+    background: #161b22;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 15px 0;
+    border: 1px solid #30363d;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 255, 136, 0.3);
+}
+
+.project-card h3 {
+    color: #58a6ff;
+}
+
+/* FORM KONTAK */
 #contact-form {
     display: flex;
     flex-direction: column;
@@ -106,10 +139,6 @@ h1 span {
     color: #c9d1d9;
 }
 
-body.light-mode #contact-form label {
-    color: #c9d1d9;
-}
-
 #contact-form input,
 #contact-form textarea {
     padding: 12px;
@@ -120,113 +149,134 @@ body.light-mode #contact-form label {
     font-size: 16px;
 }
 
-body.light-mode #contact-form input,
-body.light-mode #contact-form textarea {
-    background: #ffffff;
-    border-color: #cbd5e1;
-    color: #1a1a2e;
-}
-
 #contact-form button {
     font-size: 18px;
     padding: 12px;
 }
 
-/* ====================================
-   PERBAIKAN WARNA TEKS UNTUK SEMUA ELEMEN
-   ==================================== */
-
-/* Pastikan semua teks utama berwarna terang, bukan ungu */
-body, p, li, a, span, div, section {
-    color: #c9d1d9 !important;
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #8b949e;
+    border-top: 1px solid #30363d;
 }
 
-/* Kecuali elemen yang sengaja dibuat beda */
-h1, h2, h3, nav h2, .project-card h3, .btn, footer {
-    color: inherit !important;
-}
-
-/* Tapi judul utama tetap pakai warna terang */
-h1, h2, h3 {
-    color: #f0f6fc !important;
-}
-
-/* Warna khusus untuk link di navbar */
-nav ul li a {
-    color: #c9d1d9 !important;
-}
-
-nav ul li a:hover {
-    color: #00ff88 !important;
-}
-
-/* Warna untuk tombol tema */
-#theme-toggle {
-    color: #00ff88 !important;
-}
-
-/* ====================================
-   TEMA TERANG (LIGHT MODE)
-   ==================================== */
+/* ============================================
+   TEMA TERANG (LIGHT MODE) - LENGKAP
+   ============================================ */
 
 body.light-mode {
     background: #f0f4f8 !important;
-    color: #1a1a2e !important;
+    color: #1e293b !important;
 }
 
 body.light-mode nav {
     background: #e2e8f0 !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 body.light-mode nav h2 {
-    color: #0a0e27 !important;
+    color: #0f172a !important;
 }
 
 body.light-mode nav ul li a {
-    color: #1a1a2e !important;
+    color: #1e293b !important;
 }
 
 body.light-mode nav ul li a:hover {
     color: #00ff88 !important;
 }
 
-body.light-mode h1, 
-body.light-mode h2 {
-    color: #0a0e27 !important;
+body.light-mode #theme-toggle {
+    color: #0f172a !important;
+}
+
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3 {
+    color: #0f172a !important;
+}
+
+body.light-mode h1 span {
+    color: #00ff88 !important;
+}
+
+body.light-mode p,
+body.light-mode li,
+body.light-mode div {
+    color: #1e293b !important;
 }
 
 body.light-mode .project-card {
     background: #ffffff !important;
     border-color: #cbd5e1 !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 body.light-mode .project-card h3 {
-    color: #0a0e27 !important;
+    color: #0f172a !important;
 }
 
-body.light-mode footer {
-    color: #475569 !important;
-    border-color: #cbd5e1 !important;
-}
-
-body.light-mode #theme-toggle {
-    color: #0a0e27 !important;
-}
-
-/* Tambahan untuk form dan elemen lain di mode terang */
 body.light-mode #contact-form label {
-    color: #1a1a2e !important;
+    color: #1e293b !important;
 }
 
 body.light-mode #contact-form input,
 body.light-mode #contact-form textarea {
     background: #ffffff !important;
     border-color: #cbd5e1 !important;
-    color: #1a1a2e !important;
+    color: #1e293b !important;
 }
 
+body.light-mode #contact-form input::placeholder,
+body.light-mode #contact-form textarea::placeholder {
+    color: #94a3b8 !important;
+}
 
-/*Tambahan khusus untuk HP layar sangat kecil (di bawah 480px) */
+body.light-mode #contact-form button {
+    background: #00ff88 !important;
+    color: #0f172a !important;
+}
+
+body.light-mode #contact-form button:hover {
+    background: #66ffaa !important;
+}
+
+body.light-mode footer {
+    color: #475569 !important;
+    border-top-color: #cbd5e1 !important;
+}
+
+/* ============================================
+   RESPONSIF HP
+   ============================================ */
+
+@media (max-width: 768px) {
+    /* Navigasi TETAP HORIZONTAL (tidak ada flex-direction: column) */
+    
+    section {
+        padding-top: 100px !important;   /* Jarak aman untuk HP */
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .project-card {
+        padding: 15px;
+    }
+
+    .btn {
+        display: block;
+        text-align: center;
+        padding: 14px 20px;
+    }
+}
 @media (max-width: 480px) {
     section {
         padding: 150px 15px 30px !important;
@@ -239,25 +289,4 @@ body.light-mode #contact-form textarea {
     body {
         font-size: 14px;
     }
-}
-.btn:hover {
-    background: #66ffaa;
-}
-
-/* PROJECT CARD */
-.project-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card h3 {
-  transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 255, 136, 0.3);
-}
-
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 20px;
-    color: #8b949e;
-    border-top: 1px solid #30363d;
 }
