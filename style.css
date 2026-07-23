@@ -4,11 +4,14 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+/* SCROLL HALUS */
+html {
+    scroll-behavior: smooth;
+}
 body {
     font-family: poppins, sans-serif;
     background: #0a0e27;
-    color: #e0e0ff;
+    color: #0a0e27;
     line-height: 1.6;
 }
 
@@ -78,7 +81,7 @@ h1 span {
 .btn {
     display: inline-block;
     background: #00ff88;
-    color: #0a0e27;
+    color: #c9d1d9;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 6px;
@@ -86,6 +89,157 @@ h1 span {
     font-weight: bold;
 }
 
+/* ====================================
+   STYLE FORM KONTAK
+   ==================================== */
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+#contact-form label {
+    font-weight: bold;
+    color: #c9d1d9;
+}
+
+body.light-mode #contact-form label {
+    color: #c9d1d9;
+}
+
+#contact-form input,
+#contact-form textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+    background: #161b22;
+    color: #c9d1d9;
+    font-size: 16px;
+}
+
+body.light-mode #contact-form input,
+body.light-mode #contact-form textarea {
+    background: #ffffff;
+    border-color: #cbd5e1;
+    color: #1a1a2e;
+}
+
+#contact-form button {
+    font-size: 18px;
+    padding: 12px;
+}
+
+/* ====================================
+   PERBAIKAN WARNA TEKS UNTUK SEMUA ELEMEN
+   ==================================== */
+
+/* Pastikan semua teks utama berwarna terang, bukan ungu */
+body, p, li, a, span, div, section {
+    color: #c9d1d9 !important;
+}
+
+/* Kecuali elemen yang sengaja dibuat beda */
+h1, h2, h3, nav h2, .project-card h3, .btn, footer {
+    color: inherit !important;
+}
+
+/* Tapi judul utama tetap pakai warna terang */
+h1, h2, h3 {
+    color: #f0f6fc !important;
+}
+
+/* Warna khusus untuk link di navbar */
+nav ul li a {
+    color: #c9d1d9 !important;
+}
+
+nav ul li a:hover {
+    color: #00ff88 !important;
+}
+
+/* Warna untuk tombol tema */
+#theme-toggle {
+    color: #00ff88 !important;
+}
+
+/* ====================================
+   TEMA TERANG (LIGHT MODE)
+   ==================================== */
+
+body.light-mode {
+    background: #f0f4f8 !important;
+    color: #1a1a2e !important;
+}
+
+body.light-mode nav {
+    background: #e2e8f0 !important;
+}
+
+body.light-mode nav h2 {
+    color: #0a0e27 !important;
+}
+
+body.light-mode nav ul li a {
+    color: #1a1a2e !important;
+}
+
+body.light-mode nav ul li a:hover {
+    color: #00ff88 !important;
+}
+
+body.light-mode h1, 
+body.light-mode h2 {
+    color: #0a0e27 !important;
+}
+
+body.light-mode .project-card {
+    background: #ffffff !important;
+    border-color: #cbd5e1 !important;
+}
+
+body.light-mode .project-card h3 {
+    color: #0a0e27 !important;
+}
+
+body.light-mode footer {
+    color: #475569 !important;
+    border-color: #cbd5e1 !important;
+}
+
+body.light-mode #theme-toggle {
+    color: #0a0e27 !important;
+}
+
+/* Tambahan untuk form dan elemen lain di mode terang */
+body.light-mode #contact-form label {
+    color: #1a1a2e !important;
+}
+
+body.light-mode #contact-form input,
+body.light-mode #contact-form textarea {
+    background: #ffffff !important;
+    border-color: #cbd5e1 !important;
+    color: #1a1a2e !important;
+}
+
+
+/*Tambahan khusus untuk HP layar sangat kecil (di bawah 480px) */
+@media (max-width: 480px) {
+    section {
+        padding: 150px 15px 30px !important;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    body {
+        font-size: 14px;
+    }
+}
 .btn:hover {
     background: #66ffaa;
 }
