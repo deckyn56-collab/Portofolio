@@ -6,56 +6,31 @@
     <title>Portofolio Saya</title>
     <link rel="stylesheet" href="style.css">
 </head>
-   <script>
-    // Ambil tombol dari HTML
-    const toggleBtn = document.getElementById('theme-toggle');
-    // Ambil elemen body (seluruh halaman)
-    const body = document.body;
-
-    // Cek apakah pengguna sebelumnya sudah memilih tema (disimpan di HP)
-    if (localStorage.getItem('theme') === 'light') {
-        body.classList.add('light-mode');
-        toggleBtn.textContent = '☀️'; // Ubah ikon jadi matahari
-    }
-
-    // Saat tombol diklik
-    toggleBtn.addEventListener('click', function() {
-        body.classList.toggle('light-mode'); // Ganti mode
-
-        // Ganti ikon dan simpan pilihan
-        if (body.classList.contains('light-mode')) {
-            toggleBtn.textContent = '☀️'; // Ikon matahari
-            localStorage.setItem('theme', 'light'); // Simpan pilihan
-        } else {
-            toggleBtn.textContent = '🌙'; // Ikon bulan
-            localStorage.setItem('theme', 'dark'); // Simpan pilihan
-        }
-    });
-</script>
-  
 <body>
     <!-- NAVIGASI -->
     <nav>
-    <h2>👨‍💻 Portofolio</h2>
-    <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">Tentang</a></li>
-        <li><a href="#projects">Proyek</a></li>
-        <li><a href="#contact">Kontak</a></li>
-    </ul>
-    <!-- INI TOMBOL TEMANYA -->
-    <button id="theme-toggle" style="background: none; border: none; font-size: 24px; cursor: pointer; color: #00ff88;">🌙</button>
-</nav>
+        <h2>👨‍💻 Portofolio</h2>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">Tentang</a></li>
+            <li><a href="#projects">Proyek</a></li>
+            <li><a href="#contact">Kontak</a></li>
+        </ul>
+        <!-- TOMBOL TEMA -->
+        <button id="theme-toggle" style="background: none; border: none; font-size: 24px; cursor: pointer; color: #00ff88;">🌙</button>
+    </nav>
+
     <!-- HOME -->
     <section id="home">
         <h1>Halo, Saya <span>Deki Sukarnain</span></h1>
         <p>Saya sedang belajar menjadi <strong>Software Engineer</strong></p>
         <a href="#contact" class="btn">📩 Hubungi Saya</a>
+    </section>
 
     <!-- TENTANG -->
     <section id="about">
         <h2>Tentang Saya</h2>
-      <a href="https://ibb.co.com/9PrZfxY"><img src="https://i.ibb.co.com/btKby4d/20200915-133955.jpg" alt="Foto Deki" style="border-radius: 50%; margin-bottom: 15px; width: 120px; height: 120px; object-fit: cover;">
+        <img src="https://i.ibb.co.com/btKby4d/20200915-133955.jpg" alt="Foto Deki" style="border-radius: 50%; margin-bottom: 15px; width: 120px; height: 120px; object-fit: cover;">
         <p>Saya seorang pemula yang bersemangat belajar coding. Saya suka membuat website dan aplikasi sederhana.</p>
         <p><strong>Skill:</strong> HTML, CSS, JavaScript (dasar)</p>
     </section>
@@ -75,34 +50,66 @@
 
     <!-- KONTAK -->
     <section id="contact">
-    <h2>📬 Kirim Pesan</h2>
-    <form id="contact-form" action="https://formspree.io/f/xeeylvgg" method="POST">
-        <label for="name"></label>
-        <input type="text" id="name" name="name" placeholder="Nama kamu" required>
+        <h2>📬 Kirim Pesan</h2>
+        <form id="contact-form" action="https://formspree.io/f/xeeylvgg" method="POST">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" placeholder="Nama kamu" required>
 
-        <label for="email"></label>
-        <input type="email" id="email" name="email" placeholder="Email kamu" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Email kamu" required>
 
-        <label for="message"></label>
-        <textarea id="message" name="message" rows="4" placeholder="Tulis pesan..." required></textarea>
+            <label for="message">Pesan:</label>
+            <textarea id="message" name="message" rows="4" placeholder="Tulis pesan..." required></textarea>
 
-        <button type="submit" class="btn" style="width: 100%;">Kirim Pesan 🚀</button>
-    </form>
-    <div id="form-status" style="margin-top: 15px;"></div>
+            <button type="submit" class="btn" style="width: 100%;">Kirim Pesan 🚀</button>
+        </form>
+        <div id="form-status" style="margin-top: 15px;"></div>
 
-    <!-- Kontak lainnya tetap ada -->
-    <div style="margin-top: 30px;">
-        <p><strong>Atau hubungi langsung:</strong></p>
-        <p>📧 Email: sukarnaindeki1@gmail.com</p>
-        <p>📸 Instagram: deckyskn</p>
-        <p>📱 WhatsApp: 089505147043</p>
-        <p>🐙 GitHub: github.com/deckyn</p>
-    </div>
-</section>
+        <div style="margin-top: 30px;">
+            <p><strong>Atau hubungi langsung:</strong></p>
+            <p>📧 Email: sukarnaindeki1@gmail.com</p>
+            <p>📸 Instagram: deckyskn</p>
+            <p>📱 WhatsApp: 089505147043</p>
+            <p>🐙 GitHub: github.com/deckyn</p>
+        </div>
+    </section>
 
     <!-- FOOTER -->
     <footer>
         <p>© 2026 - Dibuat dengan ❤️ dari HP</p>
     </footer>
+
+    <!-- ==================== JAVASCRIPT UNTUK TEMA ==================== -->
+    <script>
+        // Ambil tombol tema dari HTML
+        const toggleBtn = document.getElementById('theme-toggle');
+
+        // Fungsi untuk mengganti tema
+        function toggleTheme() {
+            // Tambah atau hapus class 'light-mode' di <body>
+            document.body.classList.toggle('light-mode');
+
+            // Ganti ikon tombol
+            if (document.body.classList.contains('light-mode')) {
+                toggleBtn.textContent = '☀️';  // Tema terang -> ikon matahari
+                localStorage.setItem('theme', 'light'); // Simpan pilihan
+            } else {
+                toggleBtn.textContent = '🌙';  // Tema gelap -> ikon bulan
+                localStorage.setItem('theme', 'dark'); // Simpan pilihan
+            }
+        }
+
+        // Saat tombol diklik, jalankan fungsi di atas
+        toggleBtn.onclick = toggleTheme;
+
+        // Saat halaman dimuat, cek tema yang tersimpan di HP
+        window.onload = function() {
+            if (localStorage.getItem('theme') === 'light') {
+                document.body.classList.add('light-mode');
+                toggleBtn.textContent = '☀️';
+            }
+        };
+    </script>
+    <!-- ==================== AKHIR JAVASCRIPT ==================== -->
 </body>
 </html>
